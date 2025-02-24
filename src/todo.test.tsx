@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Todo from "./components/Todo.tsx";
+import { Todo } from "./components/Todo";
+import "@testing-library/jest-dom";
 
 test("добавление новой задачи", () => {
-  render(<Todo/>);
+  render(<Todo />);
   const input = screen.getByPlaceholderText("Добавить задачу");
   const addButton = screen.getByText("Добавить");
 
@@ -13,7 +14,7 @@ test("добавление новой задачи", () => {
 });
 
 test("переключение выполнения задачи", () => {
-  render(<Todo/>);
+  render(<Todo />);
   const input = screen.getByPlaceholderText("Добавить задачу");
   const addButton = screen.getByText("Добавить");
 
