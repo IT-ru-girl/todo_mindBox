@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import { v4 as uuidv4 } from "uuid";
 
 import styles from "./styles.module.css";
@@ -48,7 +48,7 @@ export const Todo = () => {
             </div>
             <div className={styles.todoFooter}>
                 <span>{tasks.filter(task => !task.completed).length} задач осталось</span>
-                <button onClick={clearCompleted} variant="outline">Очистить выполненные</button>
+                <button onClick={clearCompleted} >Очистить выполненные</button>
             </div>
         </div>
     );
