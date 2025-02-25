@@ -2,6 +2,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import styles from "./styles.module.css";
 import {useState} from "react";
+import {Button} from "../shared/ui/Button/Button.tsx";
+import {Input} from "../shared/ui/Input/Input.tsx";
 
 interface Task {
     id: string;
@@ -30,8 +32,8 @@ export const Todo = () => {
     return (
         <div className={styles.todoContainer}>
             <div className={styles.todoInputGroup}>
-                <input value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Добавить задачу" />
-                <button onClick={addTask}>Добавить</button>
+                <Input value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Добавить задачу" />
+                <Button onClick={addTask}>Добавить</Button>
             </div>
             <div>
                 <div>
@@ -48,7 +50,7 @@ export const Todo = () => {
             </div>
             <div className={styles.todoFooter}>
                 <span>{tasks.filter(task => !task.completed).length} задач осталось</span>
-                <button onClick={clearCompleted} >Очистить выполненные</button>
+                <Button onClick={clearCompleted} >Очистить выполненные</Button>
             </div>
         </div>
     );
